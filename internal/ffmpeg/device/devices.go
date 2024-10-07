@@ -21,7 +21,7 @@ func GetInput(src string) string {
 		return ""
 	}
 
-	runonce.Do(initDevices)
+	// runonce.Do(initDevices) // sequentially executes ffmpeg command (-list_formats) for every video device, leading to slow startup with many devices
 
 	return queryToInput(query)
 }
